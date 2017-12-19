@@ -8,5 +8,6 @@ RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
         make \
         nodejs \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && curl -L https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar -xz -C /usr/local/bin --strip 1
+    && curl -L https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar -xz -C /usr/local/bin --strip 1 \
+    && mkdir -p ~/.docker && echo "{}" > ~/.docker/config.json
 CMD ["bash"]
